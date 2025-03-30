@@ -1,1 +1,19 @@
-hi
+local Players = game:GetService("Players")
+local CoreGui = game:GetService("CoreGui")
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = CoreGui
+
+local Label = Instance.new("TextLabel")
+Label.Parent = ScreenGui
+Label.Size = UDim2.new(0, 200, 0, 30)
+Label.Position = UDim2.new(0.5, -100, 0.1, 0)
+Label.BackgroundTransparency = 1
+Label.Text = "Join Discord https://discord.gg/DmAUN6bEw3 for the new script"
+Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+Label.TextScaled = true
+Label.Font = Enum.Font.SourceSansBold
+
+Players.LocalPlayer.CharacterAdded:Connect(function()
+    ScreenGui.Parent = CoreGui
+end)
